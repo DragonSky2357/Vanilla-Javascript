@@ -62,6 +62,7 @@ header ul li a {
   background: url(bg.jpg);
   background-size: cover;
 }
+header.sticky .logo,
 header.sticky ul li a {
   color: #000;
 }
