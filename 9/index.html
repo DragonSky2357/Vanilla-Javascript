@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Vanilla Javascript Tabs</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="icon">
+        <div class="iconBx active" data-id="content1">
+          <img src="img1.jpg" />
+        </div>
+        <div class="iconBx" data-id="content2">
+          <img src="img2.jpg" />
+        </div>
+        <div class="iconBx" data-id="content3">
+          <img src="img3.jpg" />
+        </div>
+        <div class="iconBx" data-id="content4">
+          <img src="img4.jpg" />
+        </div>
+      </div>
+      <div class="content">
+        <div class="contentBx active" id="content1">
+          <div>
+            <div class="text">
+              <h2>Google Text</h2>
+              <p>
+                Google LLC is an American multinational technology company that
+                specializes in Internet-related services and products, which
+                include online advertising technologies, search engine, cloud
+                computing, software, and hardware. It is considered one of the
+                Big Four technology companies, alongside Amazon, Apple, and
+                Microsoft
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contentBx" id="content2">
+          <div>
+            <div class="text">
+              <h2>FaceBook Text</h2>
+              <p>
+                Facebook is an American online social media and social
+                networking service based in Menlo Park, California and a
+                flagship service of the namesake company Facebook, Inc. It was
+                founded by Mark Zuckerberg, along with fellow Harvard College
+                students and roommates Eduardo Saverin, Andrew McCollum, Dustin
+                Moskovitz and Chris Hughes. The founders initially limited
+                Facebook membership to Harvard students. Membership was expanded
+                to Ivy League universities, MIT, and higher education
+                institutions in the Boston area, then various other
+                universities, and lastly high school students.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contentBx" id="content3">
+          <div>
+            <div class="text">
+              <h2>YouTube Text</h2>
+              <p>
+                YouTube is an American online video-sharing platform
+                headquartered in San Bruno, California. Three former PayPal
+                employees—Chad Hurley, Steve Chen, and Jawed Karim—created the
+                service in February 2005. Google bought the site in November
+                2006 for US$1.65 billion; YouTube now operates as one of
+                Google's subsidiaries.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contentBx" id="content4">
+          <div>
+            <div class="text">
+              <h2>Twitter Text</h2>
+              <p>
+                Twitter (/ˈtwɪtər/) is an American microblogging and social
+                networking service on which users post and interact with
+                messages known as "tweets". Registered users can post, like, and
+                retweet tweets, but unregistered users can only read them. Users
+                access Twitter through its website interface, through Short
+                Message Service (SMS) or its mobile-device application software
+                ("app").
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var iconBx = document.querySelectorAll(".iconBx");
+      var contentBx = document.querySelectorAll(".contentBx");
+
+      for (var i = 0; i < iconBx.length; i++) {
+        iconBx[i].addEventListener("mouseover", function() {
+          for (var i = 0; i < contentBx.length; i++)
+            contentBx[i].className = "contentBx";
+          document.getElementById(this.dataset.id).className =
+            "contentBx active";
+          for (var i = 0; i < contentBx.length; i++)
+            iconBx[i].className = "iconBx";
+          this.className = "contentBx active";
+        });
+      }
+    </script>
+  </body>
+</html>
